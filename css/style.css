@@ -25,8 +25,144 @@ body {
     font-weight: 400;
 }
 
+:root {
+  --def-color: #FF9900;
+  --hover-color: #FFB84D;
+  --active-color: #E1670E;
+  --very-important-special-green-color: #97EE3F;
+  --white: #fff;
+  --cross-color: #cacaca;
+  --grey: #666;
+  --black: #000;
+  --half-black: rgba(0, 0, 0, 0.5);
+  --input-background: #414141;
+}
+
 .container {
     max-width: 1920px;
     padding: 0 15px;
     margin: 0 auto;
+}
+
+.nav__item {
+  position: relative;
+}
+
+.nav__item:focus {
+  outline: 1px solid var(--def-color);
+  outline-offset: 5px;
+}
+
+.nav__item:hover::after {
+  position: absolute;
+  bottom: -7px;
+  left: 0;
+  right: 0;
+  border: 1px solid var(--def-color);
+}
+
+.nav__item:active {
+  outline: none;
+  color: var(--active-color);
+}
+.nav__item:active::after {
+  position: absolute;
+  bottom: -7px;
+  left: 0;
+  right: 0;
+  border: 1px solid var(--active-color);
+}
+
+.search {
+
+}
+
+.search:focus {
+  outline: 1px solid var(--def-color);
+}
+
+.search:hover path {
+  fill: var(--def-color);
+  stroke: var(--def-color);
+}
+
+.search:active path {
+  fill: var(--def-color);
+  stroke: var(--def-color);
+}
+
+.cross {
+  display: inline-block;
+  height: 24px;
+  width: 24px;
+  stroke: var(--cross-color)
+}
+.cross:focus {
+  outline: 1px solid var(--def-color);
+}
+.cross:hover path {
+  stroke: var(--def-color)
+}
+.cross:active {
+  outline: none;
+}
+.cross:active path {
+  stroke: var(--black)
+}
+
+.button {
+  padding: 20px 38px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  color: var(--white);
+  background-color: inherit;
+  border: 3px solid var(--def-color);
+  border-radius: 16px;
+}
+
+.button:focus {
+  border: none;
+  background-color: var(--def-color);
+}
+
+.button:hover {
+  border: none;
+  background-color: var(--def-color);
+}
+
+.button:active {
+  border: none;
+  background-color: var(--active-color);
+}
+
+.button_grey {
+  padding: 20px 38px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  color: var(--black);
+  background-color: inherit;
+  border: 1px solid var(--black);
+  border-radius: 16px;
+}
+
+.button_grey:focus {
+  border: none;
+  background-color: var(--grey);
+  color: var(--white);
+}
+
+.button_grey:hover {
+  border: none;
+  background-color: var(--grey);
+  color: var(--white);
+}
+
+.button_grey:active {
+  border: none;
+  background-color: var(--black);
+  color: var(--white);
 }
