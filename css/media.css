@@ -1,3 +1,544 @@
-@media (max-width: 1024) {
+@media (max-width: 1919px) {
+  .footer__center {
+    width: calc((100% - 32px) / 2);
+  }
 
+  .footer__right {
+    display: none;
+  }
+}
+
+@media (max-width: 1440px) {
+  .header__container {
+    justify-content: space-between;
+  }
+
+  .header__menu {
+    display: inline-block;
+  }
+
+  .header__link {
+    margin-right: unset;
+  }
+
+  .header__nav {
+    display: none;
+  }
+
+  .hero {
+    padding: 160px 77px;
+    background-image: url("../img/1024-hero-1.png");
+  }
+
+  .hero__title {
+    width: 70%;
+  }
+
+  .hero__subtitle {
+    width: 70%;
+  }
+
+  .about__text {
+    width: 100%;
+  }
+
+  .about__promo {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about__article {
+    margin-right: 0;
+    margin-bottom: 32px;
+    padding-top: 538px;
+    width: 1024px;
+  }
+
+  .about__cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .card {
+    width: 1024px;
+  }
+
+  .footer__container {
+    align-items: unset;
+  }
+
+  .footer__left {
+    width: calc((100% - 32px) * 0.4);
+  }
+
+  .footer__center {
+    width: calc((100% - 6px) * 0.6);
+  }
+
+  .footer__button {
+    margin-right: 14px;
+    padding: 20px 38px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .container {
+    max-width: 954px;
+  }
+
+  .header {
+    margin-bottom: 36px;
+    padding: 26px 0;
+  }
+
+  .hero {
+    margin-bottom: 36px;
+  }
+
+  .hero__title {
+    margin: 0 0 16px;
+    width: 100%;
+    font-size: 60px;
+    line-height: 73px;
+  }
+
+  .hero__subtitle {
+    margin: 0 0 60px;
+    width: 100%;
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  .about {
+    margin-bottom: 82px;
+  }
+
+  .about__text {
+    margin-bottom: 57px;
+  }
+
+  .about__article {
+    padding-top: 444px;
+    width: 100%;
+    background-image: url("../img/1024-promo.png");
+  }
+
+  .how {
+    margin-bottom: 81px;
+  }
+
+  .card {
+    padding: 64px 150px 63px 316px;
+    width: 100%;
+    background-position: 76px 64px;
+  }
+
+  .how__steps {
+    margin-bottom: 49px;
+  }
+
+  .how__text {
+    margin: 0 0 24px;
+    padding-right: 0;
+  }
+
+  .how__item::before {
+    width: calc(50% - 25px);
+    background-image: url("../img/1024-how-1.png");
+  }
+
+  .faq {
+    margin-bottom: 79px;
+  }
+
+  .faq__pre-text {
+    font-size: 20px;
+    line-height: 32px;
+  }
+}
+
+@media (max-width: 992px) {
+  .container {
+    max-width: 698px;
+  }
+
+  .header {
+    margin-bottom: 35px;
+    padding: 11px 0;
+  }
+
+  .hero {
+    border-radius: 24px;
+    padding: 160px 40px;
+    background-image: url("../img/768-hero-1.png");
+  }
+
+  .hero__title {
+    margin-bottom: 16px;
+    font-size: 50px;
+    line-height: 61px;
+  }
+
+  .hero__subtitle {
+    margin-bottom: 60px;
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .about__text {
+    margin-bottom: 52px;
+  }
+
+  .about__article {
+    border-radius: 20px;
+    padding-top: 454px;
+    background-image: url("../img/768-promo.png");
+  }
+
+  .about__wrapper {
+    border-radius: 24px;
+    padding: 34px 40px;
+  }
+
+  .about__info {
+    width: calc(50% + 75px);
+    font-size: 16px;
+    line-height: 32px;
+  }
+
+  .card {
+    border-radius: 24px;
+    padding: 34px 44px 33px 170px;
+    background-position: 40px 67px;
+    background-size: 17%;
+  }
+
+  .card__title {
+    font-size: 24px;
+    line-height: 29px;
+  }
+
+  .card__text {
+    font-size: 16px;
+    line-height: 32px;
+  }
+
+  .how {
+    margin-bottom: 50px;
+  }
+
+  .how__title {
+    margin-bottom: 47px;
+  }
+
+  .how__steps {
+    justify-content: space-between;
+  }
+
+  .how__item {
+    padding-top: 324px;
+    background-image: url("../img/768-how-1.png");
+    background-position: 0 0;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  .how__item::before {
+    display: none;
+  }
+
+  .how__text {
+    width: 100%;
+  }
+
+  .br {
+    display: none;
+  }
+
+  .faq {
+    margin-bottom: 110px;
+  }
+
+  .faq__expand {
+    margin-left: 45px;
+  }
+
+  .footer__container {
+    flex-direction: column-reverse;
+  }
+
+  .footer__center {
+    margin-bottom: 16px;
+    width: 81%;
+  }
+
+  .footer__nav {
+    display: none;
+  }
+
+  .footer__link {
+    margin-bottom: 11px;
+  }
+}
+
+@media (max-width: 710px) {
+  .hero {
+    padding: 60px 22px;
+  }
+
+  .footer__center {
+    width: 100%;
+  }
+
+  .footer__form-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 577px) {
+  .button {
+    border-radius: 8px;
+    padding: 13px 28px;
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  .link {
+    border-radius: 8px;
+    padding: 9px 44px;
+    width: min-content;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+    color: #000;
+  }
+
+  .title {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 29px;
+  }
+
+  .container {
+    max-width: 320px;
+  }
+
+  .header {
+    margin-bottom: 29px;
+    padding: 9px 0;
+  }
+
+  .hero {
+    margin-bottom: 59px;
+    border-radius: 16px;
+    padding: 60px 24px;
+    text-align: center;
+    background-image: url("../img/320-hero-1.png");
+  }
+
+  .hero__title {
+    margin-bottom: 7px;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+  }
+
+  .hero__subtitle {
+    margin-bottom: 33px;
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  .about {
+    margin-bottom: 60px;
+  }
+
+  .about__title {
+    margin-bottom: 19px;
+  }
+
+  .about__text {
+    margin-bottom: 15px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 28px;
+  }
+
+  .about__article {
+    border-radius: 10px;
+    padding-top: 207px;
+    background-image: url("../img/320-promo.png");
+    background-size: contain;
+  }
+
+  .about__wrapper {
+    flex-direction: column;
+    align-items: unset;
+    padding: unset;
+    background-color: initial;
+  }
+
+  .about__info {
+    margin-bottom: 16px;
+    width: 100%;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 28px;
+    color: #000;
+  }
+
+  .card {
+    border: none;
+    padding: 63px 0 0;
+    background-position: 0 3px;
+    background-size: unset;
+  }
+
+  .about__card_first {
+    background-image: url("../img/320-1.svg");
+  }
+
+  .about__card_second {
+    background-image: url("../img/320-2.svg");
+  }
+
+  .card__title {
+    margin: 0 0 5px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .card__text {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 28px;
+  }
+
+  .card:not(:last-child) {
+    margin-bottom: 29px;
+  }
+
+  .how {
+    margin-bottom: 61px;
+  }
+
+  .how__title {
+    margin-bottom: 22px;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 29px;
+  }
+
+  .how__steps {
+    margin-bottom: 15px;
+  }
+
+  .how__step {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+  }
+
+  .how__step:not(:last-child) {
+    margin-right: 20px;
+  }
+
+  .how__item {
+    padding-top: 176px;
+    background-image: url("../img/320-how-1.png");
+  }
+
+  .how__subtitle {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 32px;
+  }
+
+  .how__text {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 28px;
+  }
+
+  .how__button {
+    margin-right: unset;
+    padding: 12px 45px;
+  }
+
+  .button_grey {
+    margin-left: 10px;
+    padding: 12px 31px;
+  }
+
+  .faq {
+    margin-bottom: 60px;
+  }
+
+  .faq__title {
+    margin-bottom: 16px;
+  }
+
+  .faq__pre-text {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+  }
+
+  .faq__expand {
+    margin-left: 15px;
+    width: 30px;
+    height: 30px;
+  }
+
+  .footer__container {
+    padding: 32px 18px 24px 12px;
+    gap: unset;
+  }
+
+  .footer__center {
+    margin-bottom: 33px;
+  }
+
+  .footer__title {
+    margin-bottom: 21px;
+  }
+
+  .footer__input {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 32px;
+  }
+
+  .footer__input_message {
+    height: 150px;
+  }
+
+  .footer__button {
+    margin-right: unset;
+    margin-bottom: 10px;
+  }
+
+  .footer__left {
+    align-items: center;
+    width: 100%;
+  }
+
+  .footer__social {
+    justify-content: flex-start;
+    gap: unset;
+  }
+
+  .footer__icon svg {
+    width: 40px;
+    height: 40px;
+  }
+
+  .footer__social-item:not(:last-child) {
+    margin-right: 16px;
+  }
 }
