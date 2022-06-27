@@ -10,10 +10,11 @@
 
 @media (max-width: 1440px) {
   .header__container {
+    position: relative;
     justify-content: space-between;
   }
 
-  .header__menu {
+  .header__menu-button {
     display: inline-block;
   }
 
@@ -22,7 +23,35 @@
   }
 
   .header__nav {
-    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    border-bottom-right-radius: 32px;
+    border-bottom-left-radius: 32px;
+    padding-left: 150px;
+    height: 100vh;
+    box-shadow: 0 5px 40px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    transform: translate(calc(-100% - 135px), -30px);
+  }
+
+  .header__nav_visible {
+    transform: translate(-135px, -30px);
+  }
+
+  .nav__list {
+    flex-direction: column;
+  }
+
+  .nav__item:not(:last-child) {
+    margin-bottom: 60px;
+  }
+
+  .nav__cross {
+    display: flex;
   }
 
   .hero {

@@ -12,7 +12,11 @@
 <body>
   <header class='header'>
     <div class='container header__container'>
-      <span class='header__menu' aria-label='Показать меню'></span>
+      <button class='header__menu-button' aria-label='Показать меню'>
+        <span class='header__menu' aria-disabled='true'></span>
+        <span class='header__menu' aria-disabled='true'></span>
+        <span class='header__menu' aria-disabled='true'></span>
+      </button>
       <a href='#' class='header__link'>
         <picture >
           <source srcset='./img/1024-logo-header.svg' media="(max-width: 1200px)">
@@ -23,6 +27,7 @@
 
       </a>
       <nav class='header__nav nav'>
+        <button class='nav__cross' aria-label='Закрыть меню'></button>
         <ul class='nav__list list-reset'>
           <li class='nav__item'>
             <a href='#' class='nav__link'>О нас</a>
@@ -85,10 +90,10 @@
     <section class='how main__how'>
       <h2 class='title how__title'>Как мы работаем</h2>
       <ul class='how__steps list-reset'>
-        <li class='how__step'>1 шаг</li>
-        <li class='how__step'>2 шаг</li>
-        <li class='how__step'>3 шаг</li>
-        <li class='how__step'>4 шаг</li>
+        <li class='how__step' tabindex='0'>1 шаг</li>
+        <li class='how__step' tabindex='0'>2 шаг</li>
+        <li class='how__step' tabindex='0'>3 шаг</li>
+        <li class='how__step' tabindex='0'>4 шаг</li>
       </ul>
       <div class='how__wrapper'>
         <div class='how__item how__item_first'>
@@ -224,7 +229,7 @@
         <div class='footer__form-wrap'>
           <button class='footer__button button'>Отправить данные</button>
           <label class='footer__label' for='allow' >
-            <input type='checkbox' class='footer__input_allow' name='allow' id='allow'>
+            <input type='checkbox' class='footer__input-allow' name='allow' id='allow'>
             <span class='footer__checkbox'></span>
             <span class='footer__description'>Согласен на обработку данных</span>
           </label>
