@@ -18,6 +18,7 @@ img {
   max-width: 100%;
 }
 
+
 @font-face {
   src: url("../font/Montserrat/Montserrat-Bold.woff");
   font-family: "Montserrat";
@@ -60,10 +61,23 @@ body {
   font-size: 16px;
 }
 
+.button-reset {
+  outline: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  background: none
+}
+
 .list-reset {
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+.block-scroll {
+  overflow: hidden;
 }
 
 :root {
@@ -77,6 +91,23 @@ body {
   --black: #000;
   --half-black: rgba(0, 0, 0, 0.5);
   --input-background: #414141;
+}
+
+.swiper {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1800px;
+}
+
+.swiper-pagination-bullet {
+  width: 15px;
+  height: 15px;
+  background-color: var(--cross-color);
+}
+
+.swiper-pagination-bullet-active {
+  background-color: var(--white);
 }
 
 .cross {
@@ -123,17 +154,18 @@ body {
 }
 
 .link:focus {
-  outline: none;
+  outline-width: 1px;
   background-color: var(--def-color);
 }
 
 .link:hover {
-  outline: none;
+  outline-width: 1px;
   background-color: var(--def-color);
 }
 
 .link:active {
-  outline: none;
+  outline-width: 1px;
+  outline-color: var(--active-color);
   background-color: var(--active-color);
 }
 
@@ -172,19 +204,19 @@ body {
 }
 
 .button_grey:focus {
-  outline: none;
+  outline-color: var(--grey);
   color: var(--white);
   background-color: var(--grey);
 }
 
 .button_grey:hover {
-  outline: none;
+  outline-color: var(--grey);
   color: var(--white);
   background-color: var(--grey);
 }
 
 .button_grey:active {
-  outline: none;
+  outline-color: var(--black);
   color: var(--white);
   background-color: var(--black);
 }
@@ -205,7 +237,6 @@ body {
 .header {
   margin-bottom: 50px;
   border-radius: 0 0 32px 32px;
-  padding: 12px 0;
   box-shadow: 0 5px 40px rgba(0, 0, 0, 0.1);
 }
 
@@ -213,6 +244,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  padding-top: 12px;
+  padding-bottom: 12px;
 }
 
 .header__menu-button {
@@ -226,45 +259,30 @@ body {
   cursor: pointer;
 }
 
-.header__menu:nth-child(1) {
+.header__menu {
   position: absolute;
-  left: 0;
   right: 0;
-  top: 50%;
   display: inline-block;
   border: 1px solid currentcolor;
   width: 30px;
   height: 3px;
   color: #000;
   background-color: currentcolor;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.header__menu:nth-child(1) {
+  left: 0;
+  top: 50%;
   transform: translateY(-50%);
-  transition: transform 0.3s ease;
 }
 
 .header__menu:nth-child(2) {
-  position: absolute;
-  right: 0;
   top: 2px;
-  display: inline-block;
-  border: 1px solid currentcolor;
-  width: 30px;
-  height: 3px;
-  color: #000;
-  background-color: currentcolor;
-  transition: transform 0.3s ease;
 }
 
 .header__menu:nth-child(3) {
-  position: absolute;
-  right: 0;
   bottom: 2px;
-  display: inline-block;
-  border: 1px solid currentcolor;
-  width: 30px;
-  height: 3px;
-  color: #000;
-  background-color: currentcolor;
-  transition: transform 0.3s ease;
 }
 
 .header__menu-button:focus {
@@ -284,6 +302,24 @@ body {
 .header__menu-button:hover .header__menu:nth-child(3) {
   color: var(--active-color);
   transform: translateX(12px);
+}
+
+.header__menu-button_closed .header__menu:nth-child(1) {
+  opacity: 0;
+}
+
+.header__menu-button_closed .header__menu:nth-child(2) {
+  top: unset;
+  transform: rotate(45deg);
+}
+
+.header__menu-button_closed .header__menu:nth-child(3) {
+  bottom: unset;
+  transform: rotate(-45deg);
+}
+
+.header__menu-button_closed:hover .header__menu:nth-child(3) {
+  transform: rotate(-45deg);
 }
 
 .header__link {
@@ -429,6 +465,7 @@ body {
 }
 
 .hero {
+  position: relative;
   margin-bottom: 50px;
   border-radius: 32px;
   padding: 100px 80px;
@@ -438,6 +475,8 @@ body {
 }
 
 .hero__title {
+  position: relative;
+  z-index: 10;
   margin: 0 0 24px;
   width: 51%;
   font-weight: 800;
@@ -447,6 +486,9 @@ body {
 }
 
 .hero__subtitle {
+  position: relative;
+  z-index: 10;
+  margin-top: 0;
   margin-bottom: 90px;
   width: 51%;
   font-weight: 700;
@@ -456,6 +498,8 @@ body {
 }
 
 .hero__button {
+  position: relative;
+  z-index: 10;
   padding: 25px 35px;
   font-size: 24px;
   line-height: 28px;
@@ -470,6 +514,7 @@ body {
 }
 
 .about__text {
+  margin-top: 0;
   margin-bottom: 48px;
   width: 70%;
   font-weight: 400;
@@ -573,16 +618,16 @@ body {
   margin-bottom: 45px;
 }
 
+.how__list-item:not(:last-child) {
+  margin-right: 85px;
+}
+
 .how__step {
   font-weight: 400;
   font-size: 18px;
   line-height: 22px;
   transition: outline-color 0.3s ease, outline-width 0.3s ease, color 0.3s ease;
   cursor: pointer;
-}
-
-.how__step:not(:last-child) {
-  margin-right: 85px;
 }
 
 .how__step:focus {
@@ -665,7 +710,7 @@ body {
   width: 100%;
 }
 
-.faq__btn:not(:first-child) {
+.faq__list-item:not(:first-child) .faq__btn {
   margin-top: -1px;
   border-top: 1px solid transparent;
 }
@@ -683,6 +728,12 @@ body {
 }
 
 .faq__btn:focus {
+  border-top: 1px solid var(--def-color);
+  border-bottom: 1px solid var(--def-color);
+  color: var(--def-color);
+}
+
+.faq__list-item:not(:first-child) .faq__btn:focus {
   border-top: 1px solid var(--def-color);
   border-bottom: 1px solid var(--def-color);
   color: var(--def-color);
@@ -735,6 +786,12 @@ body {
   color: var(--def-color);
 }
 
+.faq__list-item:not(:first-child) .faq__btn:hover {
+  border-top: 1px solid var(--def-color);
+  border-bottom: 1px solid var(--def-color);
+  color: var(--def-color);
+}
+
 .faq__btn:hover .faq__expand {
   background-color: var(--def-color);
 }
@@ -748,6 +805,12 @@ body {
 }
 
 .faq__btn:active {
+  border-top: 1px solid var(--black);
+  border-bottom: 1px solid var(--black);
+  color: var(--black);
+}
+
+.faq__list-item:not(:first-child) .faq__btn:active {
   border-top: 1px solid var(--black);
   border-bottom: 1px solid var(--black);
   color: var(--black);
@@ -767,9 +830,11 @@ body {
 }
 
 .faq__pre-text {
+  margin: 0;
   font-weight: 700;
   font-size: 24px;
   line-height: 32px;
+  text-align: initial;
 }
 
 .faq__content {
@@ -843,6 +908,7 @@ body {
 }
 
 .footer__right {
+  margin: 0;
   padding-left: 210px;
   width: calc((100% - ((32px * 2) / 3)) / 3);
   font-weight: 400;
