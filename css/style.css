@@ -80,6 +80,10 @@ body {
   overflow: hidden;
 }
 
+.hidden {
+  display: none;
+}
+
 :root {
   --def-color: #f90;
   --hover-color: #ffb84d;
@@ -91,23 +95,8 @@ body {
   --black: #000;
   --half-black: rgba(0, 0, 0, 0.5);
   --input-background: #414141;
-}
-
-.swiper {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 1800px;
-}
-
-.swiper-pagination-bullet {
-  width: 15px;
-  height: 15px;
-  background-color: var(--cross-color);
-}
-
-.swiper-pagination-bullet-active {
-  background-color: var(--white);
+  --swiper-pagination-bullet-horizontal-gap: 10px;
+  --swiper-pagination-bullet-inactive-opacity: 1;
 }
 
 .cross {
@@ -225,6 +214,42 @@ body {
   margin: 0 auto;
   padding: 0 15px;
   max-width: 1800px;
+}
+
+.swiper {
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.swiper__img {
+  display: block;
+  margin: 0 auto;
+  height: 100%;
+}
+
+.swiper-pagination {
+  margin-bottom: 16px;
+}
+
+.swiper-pagination-bullet {
+  width: 15px;
+  height: 15px;
+  background-color: var(--cross-color);
+}
+
+.swiper-pagination-bullet-active {
+  background-color: var(--white);
 }
 
 .title {
@@ -469,9 +494,9 @@ body {
   margin-bottom: 50px;
   border-radius: 32px;
   padding: 100px 80px;
-  background-image: url("../img/1920-hero-1.png");
-  background-size: cover;
-  background-repeat: no-repeat;
+  /*background-image: url("../img/1920-hero-1.png");*/
+  /*background-size: cover;*/
+  /*background-repeat: no-repeat;*/
 }
 
 .hero__title {
@@ -644,6 +669,11 @@ body {
   color: var(--active-color);
 }
 
+.how__step_active {
+  outline: none;
+  color: var(--active-color);
+}
+
 .how__wrapper {
   display: flex;
   width: 100%;
@@ -661,9 +691,24 @@ body {
   bottom: 0;
   border-radius: 32px;
   width: calc(50% - 16px);
-  background-image: url("../img/1920-how-1.png");
   background-position: center;
   background-size: cover;
+}
+
+.how__item_1::before {
+  background-image: url("../img/1920-how-1.png");
+}
+
+.how__item_2::before {
+  background-image: url("../img/1920-how-2.png");
+}
+
+.how__item_3::before {
+  background-image: url("../img/1920-how-3.png");
+}
+
+.how__item_4::before {
+  background-image: url("../img/1920-how-4.png");
 }
 
 .how__subtitle {
@@ -710,36 +755,49 @@ body {
   width: 100%;
 }
 
-.faq__list-item:not(:first-child) .faq__btn {
+.faq__list-item {
   margin-top: -1px;
   border-top: 1px solid transparent;
+  border-bottom: 1px solid currentColor;
+  color: var(--cross-color);
+  transition: border-top-color 0.3s ease, border-bottom-color 0.3s ease, color 0.3s ease;
 }
 
-.faq__btn {
+.faq__list-item:first-child {
+  margin-top: 0;
+  border-top: 1px solid currentColor;
+}
+
+.faq__list-item:focus {
+  border-top: 1px solid currentColor;
+  color: var(--def-color);
+}
+
+.faq__list-item:hover {
+  border-top: 1px solid currentColor;
+  color: var(--def-color);
+}
+
+
+.ui-accordion .ui-accordion-header  {
   display: flex;
+  flex-direction: row-reverse;
   align-items: center;
   justify-content: space-between;
-  border-top: 1px solid var(--cross-color);
-  border-bottom: 1px solid var(--cross-color);
-  padding: 30px 0;
+  margin: 0;
+  padding: 32px 0 32px;
   width: 100%;
+  color: var(--black);
   transition: border-top-color 0.3s ease, border-bottom-color 0.3s ease, color 0.3s ease;
   cursor: pointer;
 }
 
-.faq__btn:focus {
-  border-top: 1px solid var(--def-color);
-  border-bottom: 1px solid var(--def-color);
-  color: var(--def-color);
+.faq__list-item:hover .ui-accordion-header,
+.faq__list-item:focus .ui-accordion-header {
+  color: currentColor;
 }
 
-.faq__list-item:not(:first-child) .faq__btn:focus {
-  border-top: 1px solid var(--def-color);
-  border-bottom: 1px solid var(--def-color);
-  color: var(--def-color);
-}
-
-.faq__expand {
+.ui-icon {
   position: relative;
   flex: 0 0 auto;
   margin-left: 120px;
@@ -747,11 +805,16 @@ body {
   width: 50px;
   height: 50px;
   color: #000;
+  background-image: unset;
   background-color: var(--cross-color);
-  transition: background-color 0.3s ease, transform 0.5s ease;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.5s ease;
 }
 
-.faq__expand::after {
+.ui-state-focus .ui-icon {
+  background-image: unset;
+}
+
+.ui-icon::after {
   content: "";
   position: absolute;
   left: 50%;
@@ -763,7 +826,7 @@ body {
   transition: background-color 0.3s ease;
 }
 
-.faq__expand::before {
+.ui-icon::before {
   content: "";
   position: absolute;
   left: 50%;
@@ -775,70 +838,48 @@ body {
   transition: background-color 0.3s ease;
 }
 
-.faq__btn:focus .faq__expand {
+.faq__list-item:focus .ui-icon,
+.faq__list-item:hover .ui-icon {
   color: #fff;
+  background-image: unset;
   background-color: var(--def-color);
 }
 
-.faq__btn:hover {
-  border-top: 1px solid var(--def-color);
-  border-bottom: 1px solid var(--def-color);
-  color: var(--def-color);
-}
-
-.faq__list-item:not(:first-child) .faq__btn:hover {
-  border-top: 1px solid var(--def-color);
-  border-bottom: 1px solid var(--def-color);
-  color: var(--def-color);
-}
-
-.faq__btn:hover .faq__expand {
-  background-color: var(--def-color);
-}
-
-.faq__btn:hover .faq__expand::after {
-  background-color: var(--white);
-}
-
-.faq__btn:hover .faq__expand::before {
-  background-color: var(--white);
-}
-
-.faq__btn:active {
-  border-top: 1px solid var(--black);
-  border-bottom: 1px solid var(--black);
+.faq__list-item:active {
   color: var(--black);
 }
 
-.faq__list-item:not(:first-child) .faq__btn:active {
-  border-top: 1px solid var(--black);
-  border-bottom: 1px solid var(--black);
+.faq__list-item:active .ui-icon {
   color: var(--black);
-}
-
-.faq__btn:active .faq__expand {
+  background-image: unset;
   background-color: var(--cross-color);
   transform: rotate(45deg);
 }
 
-.faq__btn:active .faq__expand::after {
-  background-color: var(--black);
-}
-
-.faq__btn:active .faq__expand::before {
-  background-color: var(--black);
+.ui-state-active .ui-icon {
+  background-image: unset;
+  background-color: var(--cross-color);
+  transform: rotate(45deg);
 }
 
 .faq__pre-text {
   margin: 0;
+  font-family: 'Montserrat', serif;
   font-weight: 700;
   font-size: 24px;
   line-height: 32px;
   text-align: initial;
 }
 
-.faq__content {
-  display: none;
+.ui-accordion .ui-accordion-content {
+  margin: 0 0 32px;
+  border: none;
+  padding: 0 50% 0 0;
+  font-family: 'Montserrat', serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 32px;
+  color: var(--black);
 }
 
 .footer {
@@ -1015,3 +1056,4 @@ body {
   line-height: 32px;
   color: var(--cross-color);
 }
+
