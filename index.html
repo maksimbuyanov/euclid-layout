@@ -11,7 +11,8 @@
         rel="stylesheet">
   <link href="./css/swiper.min.css"
         rel="stylesheet">
-  <link href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet">
+  <link href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+        rel="stylesheet">
   <link href="./css/style.css"
         rel="stylesheet">
   <link href="./css/media.css"
@@ -30,6 +31,7 @@
 <header class="header">
   <div class="container header__container">
     <button class="header__menu-button button-reset"
+            aria-expanded="false"
             aria-label="Показать меню">
       <span class="header__menu"></span>
       <span class="header__menu"></span>
@@ -74,21 +76,63 @@
         </li>
       </ul>
     </nav>
-    <button class="header__search button-reset"
-            aria-label="Поиск">
-      <svg fill="none"
-           viewBox="0 0 24 24"
-           xmlns="http://www.w3.org/2000/svg">
-        <rect height="1.89031"
-              transform="matrix(0.713342 0.700816 -0.713342 0.700816 18.6064 17.3762)"
-              width="7.56126"/>
-        <path d="M20.9303 10.7726C20.9303 16.1533 16.4855 20.5452 10.9652 20.5452C5.44478 20.5452 1 16.1533 1 10.7726C1 5.39198 5.44478 1 10.9652 1C16.4855 1 20.9303 5.39198 20.9303 10.7726Z"
-              stroke-width="2"/>
-      </svg>
-    </button>
-    <!--      <div class="header__search-box">-->
-    <!--        -->
-    <!--      </div>-->
+    <div class="header__search-wrapper no-overflow">
+      <button class="header__search header__search_main button-reset"
+              aria-label="Поиск">
+        <svg fill="none"
+             viewBox="0 0 24 24"
+             xmlns="http://www.w3.org/2000/svg">
+          <rect height="1.89031"
+                transform="matrix(0.713342 0.700816 -0.713342 0.700816 18.6064 17.3762)"
+                width="7.56126"/>
+          <path d="M20.9303 10.7726C20.9303 16.1533 16.4855 20.5452 10.9652 20.5452C5.44478 20.5452 1 16.1533 1 10.7726C1 5.39198 5.44478 1 10.9652 1C16.4855 1 20.9303 5.39198 20.9303 10.7726Z"
+                stroke-width="2"/>
+        </svg>
+      </button>
+      <div class="header__search-box search-box search-box_hidden">
+        <input class="search-box__input "
+               aria-label="Строка поиска"
+               placeholder="Что будем искать?"
+               required
+               type="text">
+        <button class="search-box__search header__search button-reset" aria-label="Поиск">
+          <svg
+            fill="none"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg">
+            <rect height="1.89031"
+                  transform="matrix(0.713342 0.700816 -0.713342 0.700816 18.6064 17.3762)"
+                  width="7.56126"/>
+            <path d="M20.9303 10.7726C20.9303 16.1533 16.4855 20.5452 10.9652 20.5452C5.44478 20.5452 1 16.1533 1 10.7726C1 5.39198 5.44478 1 10.9652 1C16.4855 1 20.9303 5.39198 20.9303 10.7726Z"
+                  stroke-width="2"/>
+          </svg>
+        </button>
+        <button class="search-box__cross cross button-reset" aria-label="Закрыть поиск">
+          <svg
+            fill="none"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg">
+            <rect height="2.33291"
+                  transform="rotate(45 8.9541 7.30444)"
+                  width="11.6645"
+                  x="8.9541"
+                  y="7.30444"
+            />
+            <rect height="2.33291"
+                  transform="rotate(-45 7.30469 15.5525)"
+                  width="11.6645"
+                  x="7.30469"
+                  y="15.5525"
+            />
+            <circle cx="12"
+                    cy="12"
+                    r="11"
+                    stroke-width="2"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
   </div>
 </header>
 <main class="container main">
@@ -260,8 +304,8 @@
       <li class="faq__list-item">
         <button class="button-reset ui-accordion-header">
           <h3 class="faq__pre-text">Из чего формируется конечная стоимость проекта?</h3>
-<!--          <span class="faq__expand"-->
-<!--                aria-disabled="true"></span>-->
+          <!--          <span class="faq__expand"-->
+          <!--                aria-disabled="true"></span>-->
 
         </button>
         <p class="faq__description">
@@ -280,8 +324,6 @@
       <li class="faq__list-item">
         <button class="button-reset ui-accordion-header">
           <h3 class="faq__pre-text">У меня есть свой проект. Сможем ли мы его доработать / реализовать?</h3>
-<!--          <span class="ui-icon"-->
-<!--                aria-disabled="true"></span>-->
         </button>
         <p class="faq__description">
           Являясь всего лишь частью общей картины, непосредственные участники технического прогресса
@@ -299,8 +341,6 @@
       <li class="faq__list-item">
         <button class="button-reset ui-accordion-header">
           <h3 class="faq__pre-text">Я выбираю между разными компаниями. В чём ваше отличие?</h3>
-<!--          <span class="ui-icon"-->
-<!--                aria-disabled="true"></span>-->
         </button>
         <p class="faq__description">
           Являясь всего лишь частью общей картины, непосредственные участники технического прогресса
@@ -318,8 +358,6 @@
       <li class="faq__list-item">
         <button class="button-reset ui-accordion-header">
           <h3 class="faq__pre-text">Могу ли я делегировать вам работу / согласование с подрядчиком / организацией?</h3>
-<!--          <span class="faq__expand"-->
-<!--                aria-disabled="true"></span>-->
         </button>
         <p class="faq__description">
           Являясь всего лишь частью общей картины, непосредственные участники технического прогресса
@@ -337,8 +375,6 @@
       <li class="faq__list-item">
         <button class="button-reset ui-accordion-header">
           <h3 class="faq__pre-text">Могу ли я вернуть деньги на каком-либо из этапов работ?</h3>
-<!--          <span class="ui-icon"-->
-<!--                aria-disabled="true"></span>-->
         </button>
         <p class="faq__description">
           Являясь всего лишь частью общей картины, непосредственные участники технического прогресса

@@ -65,6 +65,28 @@ howStepArr.forEach(step => {
   })
 })
 
+howStepArr[0].click()
+
 $(".faq__list").accordion({
   heightStyle: "content",
+  collapsible: true,
 });
+
+
+const showSearch = document.querySelector('.header__search_main')
+const closeSearch = document.querySelector('.cross')
+const searchButton = document.querySelector('.search-box__search')
+const searchInput = document.querySelector('.search-box__input')
+const searchBlock = document.querySelector('.search-box')
+const searchWrapper = document.querySelector('.header__search-wrapper')
+showSearch.addEventListener('click', ()=> {
+  searchBlock.classList.remove("search-box_hidden")
+  searchWrapper.classList.remove('no-overflow')
+})
+closeSearch.addEventListener('click', ()=> {
+  searchBlock.classList.add("search-box_hidden")
+  searchWrapper.classList.add('no-overflow')
+})
+searchButton.addEventListener('click', ()=> {
+  alert(searchInput.value)
+})
