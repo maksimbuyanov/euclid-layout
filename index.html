@@ -11,7 +11,7 @@
         rel="stylesheet">
   <link href="./css/swiper.min.css"
         rel="stylesheet">
-  <link href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+  <link href="./css/accordion.css"
         rel="stylesheet">
   <link href="./css/style.css"
         rel="stylesheet">
@@ -19,9 +19,9 @@
         rel="stylesheet">
   <title>Евклид</title>
   <script defer
-          src="https://code.jquery.com/jquery-1.12.4.js"></script>
+          src="./js/jQuery.js"></script>
   <script defer
-          src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+          src="./js/jQuery-ui.js"></script>
   <script defer
           src="./js/swiper.min.js"></script>
   <script defer
@@ -76,7 +76,8 @@
         </li>
       </ul>
     </nav>
-    <div class="header__search-wrapper no-overflow">
+    <div class="header__search-wrapper no-overflow"
+    >
       <button class="header__search header__search_main button-reset"
               aria-label="Поиск">
         <svg fill="none"
@@ -95,7 +96,8 @@
                placeholder="Что будем искать?"
                required
                type="text">
-        <button class="search-box__search header__search button-reset" aria-label="Поиск">
+        <button class="search-box__search header__search button-reset"
+                aria-label="Поиск">
           <svg
             fill="none"
             viewBox="0 0 24 24"
@@ -107,7 +109,8 @@
                   stroke-width="2"/>
           </svg>
         </button>
-        <button class="search-box__cross cross button-reset" aria-label="Закрыть поиск">
+        <button class="search-box__cross cross button-reset"
+                aria-label="Закрыть поиск">
           <svg
             fill="none"
             viewBox="0 0 24 24"
@@ -141,9 +144,10 @@
     <p class="hero__subtitle">Есть над чем задуматься: базовые сценарии поведения пользователей и по сей день
       остаются уделом проектантов</p>
     <button class="hero__button button button-reset">Заказать расчёт</button>
-    <div class="swiper">
+    <div class="swiper"
+         aria-disabled="true"
+    >
       <div class="swiper-wrapper">
-
         <div class="swiper-slide swiper-slide_1">
           <picture>
             <source media="(max-width: 577px)"
@@ -231,21 +235,25 @@
     <ul class="how__steps list-reset">
       <li class="how__list-item">
         <button class="how__step button-reset"
+                aria-label="Первый шаг"
                 data-step="1">1 шаг
         </button>
       </li>
       <li class="how__list-item">
         <button class="how__step button-reset"
+                aria-label="Второй шаг"
                 data-step="2">2 шаг
         </button>
       </li>
       <li class="how__list-item">
         <button class="how__step button-reset"
+                aria-label="Третий шаг"
                 data-step="3">3 шаг
         </button>
       </li>
       <li class="how__list-item">
         <button class="how__step button-reset"
+                aria-label="Четвертый шаг"
                 data-step="4">4 шаг
         </button>
       </li>
@@ -302,11 +310,8 @@
     <h2 class="title faq__title">Часто задаваемые вопросы</h2>
     <ul class="faq__list list-reset">
       <li class="faq__list-item">
-        <button class="button-reset ui-accordion-header">
+        <button class="button-reset ui-accordion-header" aria-label="Показать больше">
           <h3 class="faq__pre-text">Из чего формируется конечная стоимость проекта?</h3>
-          <!--          <span class="faq__expand"-->
-          <!--                aria-disabled="true"></span>-->
-
         </button>
         <p class="faq__description">
           Являясь всего лишь частью общей картины, непосредственные участники технического прогресса
@@ -322,7 +327,7 @@
       </li>
 
       <li class="faq__list-item">
-        <button class="button-reset ui-accordion-header">
+        <button class="button-reset ui-accordion-header" aria-label="Показать больше">
           <h3 class="faq__pre-text">У меня есть свой проект. Сможем ли мы его доработать / реализовать?</h3>
         </button>
         <p class="faq__description">
@@ -339,7 +344,7 @@
       </li>
 
       <li class="faq__list-item">
-        <button class="button-reset ui-accordion-header">
+        <button class="button-reset ui-accordion-header" aria-label="Показать больше">
           <h3 class="faq__pre-text">Я выбираю между разными компаниями. В чём ваше отличие?</h3>
         </button>
         <p class="faq__description">
@@ -356,7 +361,7 @@
       </li>
 
       <li class="faq__list-item">
-        <button class="button-reset ui-accordion-header">
+        <button class="button-reset ui-accordion-header" aria-label="Показать больше">
           <h3 class="faq__pre-text">Могу ли я делегировать вам работу / согласование с подрядчиком / организацией?</h3>
         </button>
         <p class="faq__description">
@@ -373,7 +378,7 @@
       </li>
 
       <li class="faq__list-item">
-        <button class="button-reset ui-accordion-header">
+        <button class="button-reset ui-accordion-header" aria-label="Показать больше">
           <h3 class="faq__pre-text">Могу ли я вернуть деньги на каком-либо из этапов работ?</h3>
         </button>
         <p class="faq__description">
@@ -437,7 +442,8 @@
       <ul class="footer__social list-reset">
         <li class="footer__social-item">
           <a class="footer__icon"
-             href="#">
+             aria-label="Ссылка одноклассники"
+           href="#">
             <svg fill="none"
                  height="60"
                  viewBox="0 0 60 60"
@@ -449,7 +455,6 @@
                     fill-rule="evenodd"/>
             </svg>
           </a>
-
         </li>
         <li class="footer__social-item">
           <a class="footer__icon"

@@ -70,6 +70,7 @@ howStepArr[0].click()
 $(".faq__list").accordion({
   heightStyle: "content",
   collapsible: true,
+  focused:true,
 });
 
 
